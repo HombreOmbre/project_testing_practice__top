@@ -1,7 +1,7 @@
 import capitalize from "../scripts/capitalize";
 
-it('Test suites', () =>
-    expect(1).toBe(1)
+it('Test capitalize func', () =>
+    expect(capitalize('Leopold')).toBe('Leopold')
 );
 
 it('Test capitalize func', () => 
@@ -62,4 +62,8 @@ it('Test special characters as parameter', () =>
 
 it('Test special characters and some string as parameter', () =>
     expect(capitalize('!>?LeOPoLd</!')).toBeNull()
+);
+
+it('Test string with white spaces as parameter', () =>
+    expect(capitalize(' Leopold ')).toMatch(/^[A-Z]/)
 );

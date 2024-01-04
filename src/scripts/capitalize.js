@@ -4,9 +4,11 @@ export default function capitalize(str) {
         return null;
     }
 
-    if (!(str.split('').every((el) => /[a-zA-Z]/.test(el)))) {
+    const trimmedStr = str.trim();
+
+    if (!(trimmedStr.split('').every((el) => /[a-zA-Z]/.test(el)))) {
         return null;
     }
 
-    return str[0].toUpperCase() + str.toLowerCase().split('').splice(1).join('');
+    return trimmedStr[0].toUpperCase() + trimmedStr.toLowerCase().split('').splice(1).join('');
 }
